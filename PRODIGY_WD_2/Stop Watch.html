@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch</title>
+    <style>
+        .Start,.Stop,.Reset{
+            border: none;
+            width: 100px;
+            height: 50px;
+            border-radius: 3px;
+         }
+         .Start{
+            background-color: green;
+            font-size: 20px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            transition: transform 0.9s ease;
+         }
+         .Stop{
+            background-color:maroon;
+            font-size: 20px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            transition: transform 0.9s ease;
+         }
+         .Reset{
+            background-color:rgb(1, 255, 30);
+            font-size: 20px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            transition: transform 0.9s ease;
+         }
+         .Start:hover{
+            border: 1px solid green;
+            color: green;
+            background-color: white;
+            transition: transform 0.9s ease;
+            transform: scale(0.95);
+         }
+         .Stop:hover{
+            border: 1px solid maroon;
+            color: maroon;
+            background-color: white;
+            transition: transform 0.9s ease;
+            transform: scale(0.95);
+         }
+         .Reset:hover{
+            border: 1px solid rgb(1, 255, 30);
+            color: rgb(1, 255, 30);
+            background-color: white;
+            transition: transform 0.9s ease;
+            transform: scale(0.95);
+         }
+         p{
+            font-size: 100px;
+            
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 20px;
+            margin-left: 310px;
+
+         }
+         div{
+            margin-left: 578px;
+            margin-top: -90px;
+         }
+         h1{
+            font-size: 50px;
+            margin-left: 595px;
+            margin-top: 150px;
+            font-family:Arial, Helvetica, sans-serif;
+         }
+         span{
+            font-size: 50px;
+         }
+    </style>
+</head>
+<body>
+    <h1>Stop Watch</h1>
+    <p id="display">00<span>Hr</span>:00<span>Min</span>:00<span>Sec</span>:00<span>Ms</span></p>
+    <div>
+      <button class="Start" onclick="start()">Start</button>
+      <button class="Stop" onclick="stop()">Stop</button>
+      <button class="Reset" onclick="reset()">Reset</button>
+    </div>
+    <script>
+    
+    let timer;
+        let isRunning = false;
+        let elapsedTime = 0;
+
+        function start() {
+            if (!isRunning) {
+                isRunning = true;
+                timer = setInterval(() => {
+                    elapsedTime += 10;
+                    updateTime();
+                }, 10);
+            }
+        }
+
+        function stop() {
+            if (isRunning) {
+                isRunning = false;
+                clearInterval(timer);
+            }
+        }
+
+        function reset() {
+            isRunning = false;
+            clearInterval(timer);
+            elapsedTime = 0;
+            updateTime();
+        }
+
+        function updateTime() {
+            let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            let minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+            let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+            milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds;
+
+            document.getElementById('display').innerHTML = `${hours}<span>Hr</span>:${minutes}<span>Min</span>:${seconds}<span>Sec</span>:${milliseconds}<span>Ms</span>`;
+        }
+  
+  </script>
+</body>
+</html>
