@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+            color: black;
+        }
+        .nav{
+            width: 100%;
+            padding-top: 80px;
+            background-color:black;
+            z-index: 10;
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .navmenu {
+    position: relative;
+    display: inline-block;
+}
+
+.navmenu::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: mediumpurple;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.navmenu:hover::after {
+    transform: scaleX(1);
+}
+.navmenu:active{
+    color: mediumpurple;
+}
+
+        .nav li{
+            list-style: none;
+            padding-left: 40px;
+        }
+        .nav ul{
+            display: flex;
+            margin-top: -50px;
+            
+            }
+            .nav .navhead{
+                color: aliceblue;
+                padding-left: 100px;
+                padding-right: 200px;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size:40px;
+                margin-left: 50px;
+            }
+            .nav span{
+                color: mediumpurple;
+                
+            }
+            .navbtn{
+                width: 120px;
+                height: 40px;
+                border: none;
+                border-radius: 5px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 15px;
+                text-align: center;
+                background-color: mediumpurple;
+                color: white;
+   }
+   .navbtn:hover{
+    border: 2px solid mediumpurple;
+    color: mediumpurple;
+    background-color: white;
+    
+   }
+   .navhd{
+    margin-top: -15px;
+   }
+   .navb{
+    margin-top: -8px;
+   }
+   .mainimg{
+    width: 100%;
+    height: 800px;
+    border-radius: 0 0 20px 20px;
+    
+   }
+   .mainhead{
+    text-align: center;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 260px;
+    margin-top: -530px;
+    background-color: rgba(255, 255, 255, 0.305);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.305);
+    width: 1000px;
+    
+   }
+   .head1{
+    color: mediumpurple;
+   }
+   .info{
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 1250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    margin-left: -15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.359);
+   }
+   .booking{
+    border-radius: 5px;
+    height: 100px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 121.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 20;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.359);
+   }
+   .book{
+    background-color: white;
+    width: 800px;
+    display: flex;
+    margin-left: 30px;
+    height: 50px;
+    flex: 1;
+    
+   }
+   .book .sym{
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: red;
+    filter: invert(21%) sepia(75%) saturate(6513%) hue-rotate(250deg) brightness(87%) contrast(110%);
+    }
+    .book label{
+        margin-left: 20px;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         }
+      .book .inn{
+            font-size: 15px;
+            margin-top: 16px;
+         }
+    .book input{
+        margin-left: 20px;
+        border: 1px solid mediumpurple;
+        margin-top: 10px;
+        height: 30px;
+        width: 150px;
+        
+        color: blueviolet;
+        border-radius: 5px;
+        text-align: center;
+        }
+    .book .btnn{
+        margin-left: 20px;
+        margin-top: 10px;
+        height: 30px;
+        width: 150px;
+        font-weight: bold;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-radius: 5px;
+        border: none;
+        background-color:mediumpurple;
+        color: white;
+        
+    transition: transform 0.9s ease;
+    cursor: pointer;
+    }
+    .book .btnn:hover{
+      color: mediumpurple;
+      background-color: white;
+      border: 1px solid mediumpurple;
+      transition: transform 0.9s ease;
+      transform: scale(0.97);
+    }
+    .about{
+        margin-top: 150px;
+        display: flex;
+
+    }
+     .imgabt{
+        height: 350px;
+        width: 400px;
+        border-radius: 5px;
+        margin-left: -1140px;
+     }
+     .line {
+    width: 750px;
+    height: 3px;
+    background: mediumpurple;
+    margin-bottom: 20px; 
+}
+
+     .abtdt{
+        margin-left: 30px;
+        line-height: 1.3;
+        margin-top: 45px;
+     }
+     .abtdt h1{
+        font-size: 50px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     .abtdt h2{
+       font-size: 30px;
+     }
+     .abtdt p{
+        text-align: justify;
+        line-height: 1.5;
+     }
+     .abtbt{
+        border: none;
+        height: 30px;
+        width: 120px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: mediumpurple;
+        color: white;
+        transition: 2s ease;
+        margin-top: 10px;
+     }
+     .abtbt:hover{
+        transition: 2s ease;
+        color: mediumpurple;
+        border: 1px solid mediumpurple;
+        background-color: white;
+
+     }
+     
+     .conser{
+        font-size: 15px;
+        text-align: justify;
+        padding-left: 15px;
+        padding-right: 405px;
+        margin-left: -1195px;
+        background-image: url("frames-for-your-heart-zSG-kd-L6vw-unsplash.jpg");
+        background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     }
+     .serlist{
+        margin-left: -400px;
+        background-color: white;
+        height: 405px;
+        width: 405px;
+        margin-top: -423px;
+        border-radius: 0 5px 5px 0;
+     }
+     
+     .serlist li{
+        list-style: none;
+        margin-top: 20px;
+     }
+     .serp{
+        padding-top: 25px;
+        padding-left: 20px;
+        font-size: 30px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+     }
+     .serplt{
+        height: 30px;
+        width: 40px;
+        padding-right: 10px;
+     }
+     .consert{
+        margin-top: 600px;
+        margin-left: -1195px;
+        font-size: 50px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+     .line1 {
+    width: 1200px;
+    height: 3px;
+    background: mediumpurple;
+    margin-bottom: 20px;
+    margin-left: -1195px; 
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 310px;
+    margin-left: -1195px;
+    
+}
+.box{
+    background-color: rgba(186, 144, 202, 0.426);
+    height: 350px;
+    width: 385px;
+    border-radius: 10px;
+    transition: transform 0.9s ease;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.359);
+}
+.exploo{
+    margin-top: 1200px;
+    margin-left: -1190px;
+}
+.line2{
+    width:1200px;
+}
+.explo{
+    font-size: 50px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.expimg{
+    height: 200px;
+    width: 385px;
+    border-radius: 10px 10px 0 0;
+}
+.exsys{
+    margin-top: -190px;
+    margin-left: 340px;
+}
+.expls{
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin-top: 20px;
+    
+}
+.box1{
+    
+    margin-left: -370px;
+    margin-top: -70px;
+}
+.explore{
+    margin-top: 1370px;
+}
+.inform{
+    margin-left: 200px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.inform img{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    filter: invert(21%) sepia(75%) saturate(6513%) hue-rotate(250deg) brightness(87%) contrast(110%);
+}
+.explodt h1{
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    
+}
+.explodt p{
+padding-left: 10px;
+padding-right: 10px;
+line-height: 1.5;
+padding-top: 15px;
+color: rgb(0, 0, 0);
+text-align: justify;
+}
+.explodt h2{
+    color: rgb(153, 0, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.expbtn{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    margin-left: 270px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: white;
+    background-color: mediumpurple;
+    
+}
+.expbtn:hover{
+    border: 1px solid mediumpurple;
+    color: mediumpurple;
+    background-color: white;
+}
+.expact{
+    text-decoration: none;
+}
+
+#contect1 {
+    margin-top: 2000px;
+    color: white;
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    background-color: black;
+    width: 100%;
+    
+}
+.contect{
+    display: flex;
+    padding-left: 10px;
+    margin-left:150px;
+    
+}
+.contect a{
+    text-decoration: none;
+    color: rgb(126, 125, 125);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 5px;
+}
+.contect a:hover{
+    color: white;
+}
+ .contect li{
+    list-style: none;
+    padding-left: 20px;
+    line-height: 2;
+ }   
+ .contect h4{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+.links,col{
+    padding-left: 20px;
+}
+.ls{
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.ls span{
+    color: mediumpurple;
+}
+.ltt{
+    height: 20px;
+    width: 20px;
+}
+.links label{
+    padding-left: 10px;
+    }
+    .conser{
+        margin-top: 50px;
+    }
+    .qo{
+        font-style: italic;
+        color: rgb(126, 125, 125);;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+ .head2{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.116);
+  
+    margin-left: -15px;
+box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.300);
+ }
+ @media (max-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+  .box {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+  .booking{
+    display: block;
+    
+  }
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navhd {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 0;
+  }
+  .nav .navhead {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav li {
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  .navbtn {
+    margin-top: 10px;
+  }
+  .mainhead {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -400px;
+    padding: 10px;
+  }
+  .imgabt {
+    width: 100%;
+    margin-left: 0;
+  }
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  .abtdt {
+    margin: 0;
+    text-align: center;
+  }
+  .conser {
+    margin-left: 0;
+    padding-right: 0;
+  }
+  .serlist {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav ul {
+    flex-direction: column;
+  }
+  .navhead {
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .navbtn {
+    font-size: 14px;
+    width: 100%;
+  }
+  .mainimg {
+    height: 500px;
+  }
+  .mainhead {
+    width: 90%;
+    margin-top: -300px;
+    padding: 20px;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .imgabt {
+    width: 100%;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .box {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .inform {
+    margin-left: 0;
+  }
+  .explodt h1 {
+    font-size: 20px;
+  }
+  .explodt p {
+    font-size: 14px;
+  }
+}
+.copy{
+    background-color: black;
+}
+.cpy{
+color: white;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+text-align: center;
+padding-top: 10px;
+padding-bottom: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+        <div class="navhd"><li class="navhead">HOTEL <span>LANDING PAGE</span></li></div>    
+        <li><a href="#home" class="navmenu">HOME</a></li>
+        <li><a href="#about" class="navmenu">ABOUT</a></li>
+        <li><a href="#service" class="navmenu">SERVICES</a></li>
+        <li><a href="#explore" class="navmenu">EXPLORE</a></li>
+        <li><a href="#contect" class="navmenu">CONTECT</a></li>
+        <div class="navb"><li><a href=""><button class="navbtn">SIGN UP/LOGIN</button></a></li></div>
+        </ul>
+    </div>
+    <div class="home" id="home">
+        <img src="pexels-pixabay-271624.jpg" class="mainimg">
+        <h1 class="mainhead"><span class="head1">"Experience luxury and comfort at our hotel,</span>Where exceptional service and stunning accommmodations meet your needs"</h1>
+        </div>
+        <div class="booking">
+        <div class="book">
+            <img src="calendar_747310.png" class="sym"><label class="in">Check In</label>
+            <input type="text" placeholder="Date">
+            <div class="book">
+                <img src="calendar_747310.png" class="sym"><label class="in">Check Out</label>
+                <input type="text" placeholder="Date">
+                <div class="book">
+                    <img src="person_13924070.png" class="sym"><label class="inn">Person</label>
+                    <input type="number" placeholder="Number of persons">
+                    <a href="#explore"><button class="btnn">Book</button></a>
+                </div>
+                </div>
+        
+                <div class="about" id="about">
+                <img src="jacques-bopp-jW7zki2f3qc-unsplash.jpg" class="imgabt">
+                <div class="abtdt">
+                    <h1>ABOUT US</h1> <div class="line"></div> 
+                    <h2>The Best Vecation Start Here!</h2>
+                    <p>With a focus on quality accommodations, personalized experiences, and
+                        seamless booking, our platform is dedicated to ensuring that every
+                        traveler embarks on their dream holiday with confidence and
+                        excitement.With a focus on quality accommodations, personalized experiences, and
+                        seamless booking, our platform is dedicated to ensuring that every
+                        traveler embarks on their dream holiday with confidence and
+                        excitement.</p>
+                        <button class="abtbt">Read More</button>
+                </div>
+                </div>
+                
+                <div id="service1">
+                    <section class="service">
+                    <h2 class="consert">OUR SERVICE</h2><div class="line1"></div> 
+                    <div class="conser"><h1 id="service" class="head2">"Discover unparalleled service at our hotel with attentive staff, luxurious amenities, and personalized care for a memorable stay."</h1></div>
+                    <div class="serlist"><ul>
+                        <li><p class="serp"><img src="shield.png" class="serplt">High Class Security</p></li>
+                        <li><p class="serp"><img src="24-7.png" class="serplt">24 Hours Room Service</p></li>
+                        <li><p class="serp"><img src="coworking.png" class="serplt">Conference Room</p></li>
+                        <li><p class="serp"><img src="map.png" class="serplt">Tourist Guide Support</p></li>
+                        <li><p class="serp"><img src="cutlery.png" class="serplt">Restaurants</p></li>
+                    </ul></div>
+                    </section>
+                </div>
+
+                <div class="info">
+                  <div class="inform"><h1><img src="real-estate.png">250+</h1><p>Properties Available</p></div>
+                  <div class="inform"><h1><img src="9025724_note_pencil_icon.png">3500+</h1><p>Bookings Completed</p></div>
+                  <div class="inform"><h1><img src="person_13924070.png">10000+</h1><p>Happy Customers</p></div>
+                </div>
+        
+                <div id="explore1">
+                    <section class="explore">
+                        <div class="exploo"><h2 class="explo" id="explore">EXPLORE</h2><div class="line line2"></div>
+                        <p class="explop">"Discover the magic of our city with our curated experiences. From vibrant markets and historic landmarks to serene nature trails and exquisite dining, your adventure starts here. Let us be your guide to unforgettable memories and hidden gems. Begin your journey with us and explore the extraordinary."</p></div>
+                     <div class="container">
+                        <div class="box"><div><img src="christopher-jolly-GqbU78bdJFM-unsplash.jpg" class="expimg"></div>
+                         <div class="exsys">
+                         <img src="heart.png" class="expls">
+                         <img src="bookmark.png" class="expls">
+                         <img src="share.png" class="expls"></div>
+                         <div class="explodt"><h1>Classic Comfort Room</h1>
+                            <p>"Relax in the Classic Comfort Room, featuring cozy furnishings and modern amenities, designed to offer a warm and inviting atmosphere."</p>
+                            <h2>900$</h2>
+                         </div>
+                         <a href="" class="expact"><button class="expbtn">Book Now</button></a>
+                        </div>
+                        <div class="box"><div><img src="dan-gold-4HG3Ca3EzWw-unsplash.jpg" class="expimg"></div>
+                        <div class="exsys">
+                            <img src="heart.png" class="expls">
+                            <img src="bookmark.png" class="expls">
+                            <img src="share.png" class="expls"></div>
+                            <div class="explodt"><h1>Heritage Charm Room</h1>
+                                <p>"Step into the Heritage Charm Room, where timeless decor and vintage furnishings transport you to an era of elegance and grace."</p>
+                                <h2>900$</h2>
+                             </div>
+                             <a href="" class="expact"><button class="expbtn">Book Now</button></a>
+                           </div>
+                           </div>
+                        <div class="box box1" ><div><img src="toa-heftiba-bnoPZ9aTyWQ-unsplash.jpg" class="expimg"></div>
+                        <div class="exsys">
+                            <img src="heart.png" class="expls">
+                            <img src="bookmark.png" class="expls">
+                            <img src="share.png" class="expls"></div>
+                            <div class="explodt"><h1>Coastal Breeze Suite</h1>
+                                <p>"Experience the serene ambiance of the Coastal Breeze Suite, where ocean views and elegant decor create a relaxing retreat."</p>
+                                <h2>900$</h2>
+                             </div>
+                             <a href="" class="expact"><button class="expbtn">Book Now</button></a>
+                           </div>
+                       </div>
+                     </div>
+                    </section>
+                </div>
+        </div>
+        
+      <div id="contect1">
+    <div class="contect">
+        <div class="col">
+         <h1 class="ls" id="contect">Hotel <span>Landing Page</span></h1>
+         <p class="qo">"Your luxurious retreat, where exceptional service meets refined relaxation."</p>
+        </div>
+     <ul class="links">
+        <li><h4>QUICK LINKS</h4></li>
+                <li><a href="#">Find Destinations</a></li>
+                <li><a href="#">Special Offers & Packages</a></li>
+                <li><a href="#">Room Types & Amenities</a></li>
+                <li><a href="#">Customer Reviews & Ratings</a></li>
+                <li><a href="#">Travel Tips & Guides</a></li>
+              </ul>
+            
+            <div class="col">
+              
+              <ul class="links">
+                <li><h4>OUR SERVICES</h4></li>
+                <li><a href="#">Concierge Assistance</a></li>
+                <li><a href="#">Flexible Booking Options</a></li>
+                <li><a href="#">Airport Transfers</a></li>
+                <li><a href="#">Wellness & Recreation</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              
+              <ul class="links">
+                <li><h4>CONTACT US</h4></li>
+                <li><a href="#" class="aa"><img src="logo_15465653.png" class="ltt"> hotel@gmail.com</a></li>
+                <li><a href="#" class="aa"><img src="facebook.png"  class="ltt" alt="facebook" /><label>Facebook</label></a></li>
+                <li><a href="#" class="aa"><img src="instagram_2111463.png" class="ltt" alt="instagram" /><label>Instagram</label></a></li>
+                <li><a href="#" class="aa"><img src="youtube_1384060.png" class="ltt" alt="youtube" /><label>Youtube</label></a></li>
+                <li><a href="#" class="aa"><img src="twitter_3256013.png" class="ltt" alt="twitter" /><label>Twitter</label></a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+<div class="copy">
+    <p class="cpy">&copy; 2024 Hotel Landing Page. All Rights Reserved.</p>
+</div>     
+
+</body>
+</html>
